@@ -36,7 +36,14 @@ namespace Task1
                         break;
 
                     case "/":
-                        result = calculator.Division(a, b);
+                        if (b == 0)
+                        {
+                            Console.WriteLine("Деление на ноль недопустимо");
+                        }
+                        else
+                        {
+                            result = calculator.Division(a, b);
+                        }
                         break;
 
                     default:
