@@ -7,21 +7,21 @@ namespace Task1
         static void Main(string[] args)
         {
             Console.WriteLine("=== Примитивный калькулятор ===\n");
-            
+
             while (true)
             {
                 try
                 {
                     double result = 0;
-                
+
                     ICalculator calculator = new Calculator();
-                
+
                     Console.Write("Введите первое число: ");
                     double a = calculator.ReadNumber();
-                
+
                     Console.Write("Введите второе число: ");
                     double b = calculator.ReadNumber();
-                
+
                     Console.Write("Выберите операцию '+', '-', '*', '/': ");
                     string operation = Console.ReadLine();
 
@@ -42,7 +42,7 @@ namespace Task1
                         case "/":
                             if (b == 0)
                             {
-                                Console.WriteLine("Деление на ноль недопустимо!");
+                                Console.WriteLine("Деление на ноль невозможно!");
                             }
                             else
                             {
@@ -62,17 +62,17 @@ namespace Task1
                 {
                     Console.WriteLine("Некорректный ввод числа!");
                 }
-            
+
                 catch (OverflowException)
                 {
                     Console.WriteLine("Число слишком большое!");
                 }
-            
+
                 catch (Exception)
                 {
                     Console.WriteLine("Неизвестная ошибка!");
                 }
-            
+
                 finally
                 {
                     Console.WriteLine("\nНажмите <Esc> для выхода или любую клавишу для продолжения . . .\n");
