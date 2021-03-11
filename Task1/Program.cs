@@ -6,73 +6,81 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            try
+            Console.WriteLine("=== Примитивный калькулятор ===\n");
+            
+            while (true)
             {
-                double result = 0;
-                
-                ICalculator calculator = new Calculator();
-                
-                Console.Write("Введите первое число: ");
-                double a = calculator.ReadNumber();
-                
-                Console.Write("Введите второе число: ");
-                double b = calculator.ReadNumber();
-                
-                Console.Write("Выберите операцию '+', '-', '*', '/': ");
-                string operation = Console.ReadLine();
-
-                switch (operation)
+                try
                 {
-                    case "+":
-                        result = calculator.Sum(a, b);
-                        break;
+                    double result = 0;
+                
+                    ICalculator calculator = new Calculator();
+                
+                    Console.Write("Введите первое число: ");
+                    double a = calculator.ReadNumber();
+                
+                    Console.Write("Введите второе число: ");
+                    double b = calculator.ReadNumber();
+                
+                    Console.Write("Выберите операцию '+', '-', '*', '/': ");
+                    string operation = Console.ReadLine();
 
-                    case "-":
-                        result = calculator.Subtraction(a, b);
-                        break;
+                    switch (operation)
+                    {
+                        case "+":
+                            result = calculator.Sum(a, b);
+                            break;
 
-                    case "*":
-                        result = calculator.Multiplication(a, b);
-                        break;
+                        case "-":
+                            result = calculator.Subtraction(a, b);
+                            break;
 
-                    case "/":
-                        if (b == 0)
-                        {
-                            Console.WriteLine("Деление на ноль недопустимо");
-                        }
-                        else
-                        {
-                            result = calculator.Division(a, b);
-                        }
-                        break;
+                        case "*":
+                            result = calculator.Multiplication(a, b);
+                            break;
 
-                    default:
-                        Console.WriteLine("Неизвестная операция");
-                        break;
+                        case "/":
+                            if (b == 0)
+                            {
+                                Console.WriteLine("Деление на ноль недопустимо!");
+                            }
+                            else
+                            {
+                                result = calculator.Division(a, b);
+                            }
+                            break;
+
+                        default:
+                            Console.WriteLine("Неизвестная операция!");
+                            break;
+                    }
+
+                    calculator.DisplayResult(result);
                 }
 
-                calculator.DisplayResult(result);
-            }
-
-            catch (FormatException)
-            {
-                Console.WriteLine("Некорректный ввод числа");
-            }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Некорректный ввод числа!");
+                }
             
-            catch (OverflowException)
-            {
-                Console.WriteLine("Число слишком большое");
-            }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Число слишком большое!");
+                }
             
-            catch (Exception)
-            {
-                Console.WriteLine("Неизвестная ошибка");
-            }
+                catch (Exception)
+                {
+                    Console.WriteLine("Неизвестная ошибка!");
+                }
             
-            finally
-            {
-                Console.WriteLine("\nНажмите любую клавишу . . .");
-                Console.ReadKey(true);
+                finally
+                {
+                    Console.WriteLine("\nНажмите <Esc> для выхода или любую клавишу для продолжения . . .\n");
+                    if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                    {
+                        Environment.Exit(0);
+                    }
+                }
             }
         }
     }
