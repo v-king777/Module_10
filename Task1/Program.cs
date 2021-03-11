@@ -6,13 +6,19 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            ICalculator calculator = new Calculator();
-
             try
             {
                 double result = 0;
+                
+                ICalculator calculator = new Calculator();
+                
+                Console.Write("Введите первое число: ");
                 double a = calculator.ReadNumber();
+                
+                Console.Write("Введите второе число: ");
                 double b = calculator.ReadNumber();
+                
+                Console.Write("Выберите операцию '+', '-', '*', '/': ");
                 string operation = Console.ReadLine();
 
                 switch (operation)
@@ -44,6 +50,22 @@ namespace Task1
             catch (FormatException)
             {
                 Console.WriteLine("Некорректный ввод числа");
+            }
+            
+            catch (OverflowException)
+            {
+                Console.WriteLine("Число слишком большое");
+            }
+            
+            catch (Exception)
+            {
+                Console.WriteLine("Неизвестная ошибка");
+            }
+            
+            finally
+            {
+                Console.WriteLine("\nНажмите любую клавишу . . .");
+                Console.ReadKey(true);
             }
         }
     }
