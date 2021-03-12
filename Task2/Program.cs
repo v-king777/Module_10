@@ -31,7 +31,7 @@ namespace Task2
                     Console.Write("Выберите операцию '+', '-', '*', '/': ");
                     string operation = Console.ReadLine();
                     
-                    Logger.Event("Выполняется обрабатка данных . . .");
+                    Logger.Event("Выполняется обработка данных . . .");
                     Thread.Sleep(3000);
 
                     switch (operation)
