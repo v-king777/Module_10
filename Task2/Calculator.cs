@@ -48,7 +48,7 @@ namespace Task2
         double ICalculator.ReadNumber()
         {
             string read = Console.ReadLine();
-            Logger.Event("Выполняется обрабатка данных . . .");
+            Logger.Event("Выполняется обработка данных . . .");
             Thread.Sleep(3000);
             return Convert.ToDouble(read);
         }
