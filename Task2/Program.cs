@@ -6,7 +6,7 @@ namespace Task2
     class Program
     {
         static Logger Logger { get; set; }
-        
+
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -17,7 +17,7 @@ namespace Task2
                 try
                 {
                     double result = 0;
-                    
+
                     Logger = new Logger();
 
                     ICalculator calculator = new Calculator(Logger);
@@ -30,7 +30,7 @@ namespace Task2
 
                     Console.Write("Выберите операцию '+', '-', '*', '/': ");
                     string operation = Console.ReadLine();
-                    
+
                     Logger.Event("Выполняется обработка данных . . .");
                     Thread.Sleep(3000);
 
