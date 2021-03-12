@@ -11,8 +11,8 @@ namespace Task2
         {
             Logger = logger;
         }
-       
-       double ICalculator.Sum(double a, double b)
+
+        double ICalculator.Sum(double a, double b)
         {
             Logger.Event("Выполняется операция сложения . . .");
             Thread.Sleep(3000);
