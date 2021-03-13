@@ -14,14 +14,12 @@ namespace Task2
 
             while (true)
             {
+                double result = 0;
+                Logger = new Logger();
+                ICalculator calculator = new Calculator(Logger);
+
                 try
                 {
-                    double result = 0;
-
-                    Logger = new Logger();
-
-                    ICalculator calculator = new Calculator(Logger);
-
                     Console.Write("Введите первое число: ");
                     double a = calculator.ReadNumber();
 
@@ -32,7 +30,7 @@ namespace Task2
                     string operation = Console.ReadLine();
 
                     Logger.Event("Выполняется обработка данных . . .");
-                    Thread.Sleep(3000);
+                    Thread.Sleep(2000);
 
                     switch (operation)
                     {
@@ -51,9 +49,7 @@ namespace Task2
                         case "/":
                             if (b == 0)
                             {
-                                Logger.Error("Что-то пошло не так . . .");
-                                Thread.Sleep(3000);
-                                Console.WriteLine("Деление на ноль невозможно!");
+                                throw new DivideByZeroException();
                             }
                             else
                             {
@@ -62,34 +58,53 @@ namespace Task2
                             break;
 
                         default:
-                            Logger.Error("Что-то пошло не так . . .");
-                            Thread.Sleep(3000);
-                            Console.WriteLine("Неизвестная операция!");
-                            break;
+                            throw new MyException("Неизвестная операция!");
                     }
 
                     calculator.DisplayResult(result);
                 }
 
-                catch (FormatException)
+                catch (FormatException formatEx)
                 {
                     Logger.Error("Что-то пошло не так . . .");
-                    Thread.Sleep(3000);
-                    Console.WriteLine("Некорректный ввод числа!");
+                    Thread.Sleep(2000);
+                    Logger.Error("Некорректный ввод числа!");
+                    Logger.Error(formatEx.Message);
+                    Logger.Error(formatEx.StackTrace);
                 }
 
-                catch (OverflowException)
+                catch (OverflowException overflowEx)
                 {
                     Logger.Error("Что-то пошло не так . . .");
-                    Thread.Sleep(3000);
-                    Console.WriteLine("Число слишком большое!");
+                    Thread.Sleep(2000);
+                    Logger.Error("Число слишком большое!");
+                    Logger.Error(overflowEx.Message);
+                    Logger.Error(overflowEx.StackTrace);
+                }
+
+                catch (DivideByZeroException divEx)
+                {
+                    Logger.Error("Что-то пошло не так . . .");
+                    Thread.Sleep(2000);
+                    Logger.Error("Деление на ноль невозможно!");
+                    Logger.Error(divEx.Message);
+                    Logger.Error(divEx.StackTrace);
+                }
+
+                catch (MyException myEx)
+                {
+                    Logger.Error("Что-то пошло не так . . .");
+                    Thread.Sleep(2000);
+                    Logger.Error(myEx.Message);
+                    Logger.Error(myEx.StackTrace);
                 }
 
                 catch (Exception ex)
                 {
                     Logger.Error("Что-то пошло не так . . .");
-                    Thread.Sleep(3000);
-                    Console.WriteLine("Произошла ошибка: " + ex.Message);
+                    Thread.Sleep(2000);
+                    Logger.Error("Произошла ошибка: " + ex.Message);
+                    Logger.Error(ex.StackTrace);
                 }
 
                 finally
