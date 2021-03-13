@@ -15,28 +15,28 @@ namespace Task2
         double ICalculator.Sum(double a, double b)
         {
             Logger.Event("Выполняется операция сложения . . .");
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             return a + b;
         }
 
         double ICalculator.Subtraction(double a, double b)
         {
             Logger.Event("Выполняется операция вычитания . . .");
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             return a - b;
         }
 
         double ICalculator.Multiplication(double a, double b)
         {
             Logger.Event("Выполняется операция умножения . . .");
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             return a * b;
         }
 
         double ICalculator.Division(double a, double b)
         {
             Logger.Event("Выполняется операция деления . . .");
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             return a / b;
         }
 
@@ -49,7 +49,7 @@ namespace Task2
         {
             string read = Console.ReadLine();
             Logger.Event("Выполняется обработка данных . . .");
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             return Convert.ToDouble(read);
         }
     }
