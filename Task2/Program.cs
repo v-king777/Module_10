@@ -70,7 +70,6 @@ namespace Task2
                     Thread.Sleep(2000);
                     Logger.Error("Некорректный ввод числа!");
                     Logger.Error(formatEx.Message);
-                    Logger.Error(formatEx.StackTrace);
                 }
 
                 catch (OverflowException overflowEx)
@@ -79,7 +78,6 @@ namespace Task2
                     Thread.Sleep(2000);
                     Logger.Error("Число слишком большое!");
                     Logger.Error(overflowEx.Message);
-                    Logger.Error(overflowEx.StackTrace);
                 }
 
                 catch (DivideByZeroException divEx)
@@ -88,7 +86,6 @@ namespace Task2
                     Thread.Sleep(2000);
                     Logger.Error("Деление на ноль невозможно!");
                     Logger.Error(divEx.Message);
-                    Logger.Error(divEx.StackTrace);
                 }
 
                 catch (MyException myEx)
@@ -96,7 +93,6 @@ namespace Task2
                     Logger.Error("Что-то пошло не так . . .");
                     Thread.Sleep(2000);
                     Logger.Error(myEx.Message);
-                    Logger.Error(myEx.StackTrace);
                 }
 
                 catch (Exception ex)
@@ -104,7 +100,6 @@ namespace Task2
                     Logger.Error("Что-то пошло не так . . .");
                     Thread.Sleep(2000);
                     Logger.Error("Произошла ошибка: " + ex.Message);
-                    Logger.Error(ex.StackTrace);
                 }
 
                 finally
