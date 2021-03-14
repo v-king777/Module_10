@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Learning\VS_Projects\Module_10\Task2\Task2.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>
