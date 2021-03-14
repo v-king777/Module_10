@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Task2</name>
+    </assembly>
+    <members>
+        <member name="T:Task2.Calculator">
+            <summary>
+            Calculator class
+            </summary>
+        </member>
+        <member name="M:Task2.Calculator.#ctor(Task2.Logger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Task2.Calculator"/> class
+            </summary>
+            <param name="logger">Variable of type Logger</param>
+        </member>
+        <member name="P:Task2.Calculator.Logger">
+            <summary>
+            Gets a variable of type Logger
+            </summary>
+        </member>
+        <member name="M:Task2.Calculator.Task2#ICalculator#Sum(System.Double,System.Double)">
+            <summary>
+            Performs an addition operation
+            </summary>
+            <param name="a">Variable one of type Double</param>
+            <param name="b">Variable two of type Double</param>
+            <returns>The result of adding numbers a and b</returns>
+        </member>
+        <member name="M:Task2.Calculator.Task2#ICalculator#Subtraction(System.Double,System.Double)">
+            <summary>
+            Performs a subtraction operation
+            </summary>
+            <param name="a">Variable one of type Double</param>
+            <param name="b">Variable two of type Double</param>
+            <returns>The result of subtracting the numbers a and b</returns>
+        </member>
+        <member name="M:Task2.Calculator.Task2#ICalculator#Multiplication(System.Double,System.Double)">
+            <summary>
+            Performs a multiplication operation
+            </summary>
+            <param name="a">Variable one of type Double</param>
+            <param name="b">Variable two of type Double</param>
+            <returns>The result of the multiplication of numbers a and b</returns>
+        </member>
+        <member name="M:Task2.Calculator.Task2#ICalculator#Division(System.Double,System.Double)">
+            <summary>
+            Performs division operation
+            </summary>
+            <param name="a">Variable one of type Double</param>
+            <param name="b">Variable two of type Double</param>
+            <returns>The result of dividing the numbers a and b</returns>
+        </member>
+        <member name="M:Task2.Calculator.Task2#ICalculator#DisplayResult(System.Double)">
+            <summary>
+            Displays the result of an arithmetic operation
+            </summary>
+            <param name="result">The result of an arithmetic operation</param>
+        </member>
+        <member name="M:Task2.Calculator.Task2#ICalculator#ReadNumber">
+            <summary>
+            Reads user input
+            </summary>
+            <returns>Variable of type Double</returns>
+        </member>
+        <member name="T:Task2.ICalculator">
+            <summary>
+            Calculator interface
+            </summary>
+        </member>
+        <member name="M:Task2.ICalculator.Sum(System.Double,System.Double)">
+            <summary>
+            Performs an addition operation
+            </summary>
+            <param name="a">Variable one of type Double</param>
+            <param name="b">Variable two of type Double</param>
+            <returns>The result of adding numbers a and b</returns>
+        </member>
+        <member name="M:Task2.ICalculator.Subtraction(System.Double,System.Double)">
+            <summary>
+            Performs a subtraction operation
+            </summary>
+            <param name="a">Variable one of type Double</param>
+            <param name="b">Variable two of type Double</param>
+            <returns>The result of subtracting the numbers a and b</returns>
+        </member>
+        <member name="M:Task2.ICalculator.Multiplication(System.Double,System.Double)">
+            <summary>
+            Performs a multiplication operation
+            </summary>
+            <param name="a">Variable one of type Double</param>
+            <param name="b">Variable two of type Double</param>
+            <returns>The result of the multiplication of numbers a and b</returns>
+        </member>
+        <member name="M:Task2.ICalculator.Division(System.Double,System.Double)">
+            <summary>
+            Performs division operation
+            </summary>
+            <param name="a">Variable one of type Double</param>
+            <param name="b">Variable two of type Double</param>
+            <returns>The result of dividing the numbers a and b</returns>
+        </member>
+        <member name="M:Task2.ICalculator.DisplayResult(System.Double)">
+            <summary>
+            Displays the result of an arithmetic operation
+            </summary>
+            <param name="result">The result of an arithmetic operation</param>
+        </member>
+        <member name="M:Task2.ICalculator.ReadNumber">
+            <summary>
+            Reads user input
+            </summary>
+            <returns>Variable of type Double</returns>
+        </member>
+        <member name="T:Task2.ILogger">
+            <summary>
+            Logger interface
+            </summary>
+        </member>
+        <member name="M:Task2.ILogger.Event(System.String)">
+            <summary>
+            Creates an event message
+            </summary>
+            <param name="message">Event message</param>
+        </member>
+        <member name="M:Task2.ILogger.Error(System.String)">
+            <summary>
+            Creates an error message
+            </summary>
+            <param name="message">Error message</param>
+        </member>
+        <member name="T:Task2.Logger">
+            <summary>
+            Logger class
+            </summary>
+        </member>
+        <member name="M:Task2.Logger.Error(System.String)">
+            <summary>
+            Creates an event message
+            </summary>
+            <param name="message">Event message</param>
+        </member>
+        <member name="M:Task2.Logger.Event(System.String)">
+            <summary>
+            Creates an error message
+            </summary>
+            <param name="message">Error message</param>
+        </member>
+        <member name="T:Task2.MyException">
+            <summary>
+            MyException class
+            </summary>
+        </member>
+        <member name="M:Task2.MyException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Task2.MyException"/> class
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="T:Task2.Program">
+            <summary>
+            Program class
+            </summary>
+        </member>
+        <member name="P:Task2.Program.Logger">
+            <summary>
+            Gets or sets a variable of type Logger
+            </summary>
+        </member>
+        <member name="M:Task2.Program.Main(System.String[])">
+            <summary>
+            Program entry point
+            </summary>
+            <param name="args">Array of variables of type String</param>
+        </member>
+    </members>
+</doc>
