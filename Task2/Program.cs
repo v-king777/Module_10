@@ -1,20 +1,34 @@
-﻿using System;
+﻿// <copyright file="Program.cs" company="MyCompany.com">
+// Copyright (c) 2021. All rights reserved.
+// </copyright>
+// <author>v-king777</author>
+using System;
 using System.Threading;
 
 namespace Task2
 {
-    class Program
+    /// <summary>
+    /// Program class
+    /// </summary>
+    internal class Program
     {
-        static Logger Logger { get; set; }
+        /// <summary>
+        /// Gets or sets a variable of type Logger
+        /// </summary>
+        private static Logger Logger { get; set; }
 
-        static void Main(string[] args)
+        /// <summary>
+        /// Program entry point
+        /// </summary>
+        /// <param name="args">Array of variables of type String</param>
+        private static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("=== Примитивный и ооочень медленный калькулятор ===\n");
 
             while (true)
             {
-                double result = 0;
+                double result;
                 Logger = new Logger();
                 ICalculator calculator = new Calculator(Logger);
 
@@ -55,6 +69,7 @@ namespace Task2
                             {
                                 result = calculator.Division(a, b);
                             }
+
                             break;
 
                         default:
@@ -63,7 +78,6 @@ namespace Task2
 
                     calculator.DisplayResult(result);
                 }
-
                 catch (FormatException formatEx)
                 {
                     Logger.Error("Что-то пошло не так . . .");
@@ -71,7 +85,6 @@ namespace Task2
                     Logger.Error("Некорректный ввод числа!");
                     Logger.Error(formatEx.Message);
                 }
-
                 catch (OverflowException overflowEx)
                 {
                     Logger.Error("Что-то пошло не так . . .");
@@ -79,7 +92,6 @@ namespace Task2
                     Logger.Error("Число слишком большое!");
                     Logger.Error(overflowEx.Message);
                 }
-
                 catch (DivideByZeroException divEx)
                 {
                     Logger.Error("Что-то пошло не так . . .");
@@ -87,21 +99,18 @@ namespace Task2
                     Logger.Error("Деление на ноль невозможно!");
                     Logger.Error(divEx.Message);
                 }
-
                 catch (MyException myEx)
                 {
                     Logger.Error("Что-то пошло не так . . .");
                     Thread.Sleep(2000);
                     Logger.Error(myEx.Message);
                 }
-
                 catch (Exception ex)
                 {
                     Logger.Error("Что-то пошло не так . . .");
                     Thread.Sleep(2000);
                     Logger.Error("Произошла ошибка: " + ex.Message);
                 }
-
                 finally
                 {
                     Console.WriteLine("\nНажмите <Esc> для выхода или любую клавишу для продолжения . . .\n");
